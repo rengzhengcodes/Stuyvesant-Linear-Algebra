@@ -28,4 +28,4 @@ train_X_man = collapse_3D_2D_manual(train_X)
 print(train_X_man)
 ## np.savetxt("bar.csv", train_X_man, delimiter=",")
 
-print("3D to 2D: " + str(train_X_lin == train_X_man))
+print("3D to 2D: " + str(np.array_equal(train_X_lin, train_X_man)))
