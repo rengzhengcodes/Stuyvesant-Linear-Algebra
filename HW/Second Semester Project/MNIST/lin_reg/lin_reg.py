@@ -7,8 +7,5 @@ def collapse_3D_2D(m3D:np.ndarray) -> np.ndarray:
 	else:
 		raise ValueError("Expected 3D array, got " + m3D.ndim)
 
-from matplotlib import pyplot
-def print_data():
-	pass
-	for i in range(train_X):
-		pass
+def regress2D_matrix(matrix:np.ndarray, result_vector:np.ndarray) -> np.ndarray:
+	return np.linalg.inv(matrix.transpose()@matrix)@matrix.transpose()@result_vector
