@@ -32,3 +32,24 @@ def demean(data:np.array):
 
 	return data
 
+def pca(data:np.array):
+	"""
+	Conducts principle component analysis
+	"""
+	data = demean(data)
+	# forms covariant matrix
+	covariant_matrix = data.transpose()@data
+	covariant_matrix = covariant_matrix/len(data)
+
+	# finds eigenvectors and eigenvalues
+	raw_results = np.linalg.eig(covariant_matrix)
+
+	# converts to dict
+	results = dict()
+
+	for i in range(len(raw_results[0])):
+		results[raw_results[0][i]] = raw_results[1][i]
+
+	return results
+
+print(pca(data))
