@@ -15,4 +15,20 @@ import numpy as np
 
 data = np.array(data)
 
-print(data)
+"""
+analyzes data
+"""
+def demean(data:np.array):
+	"""
+	demeans array input
+	"""
+	# gets the mean along the columns
+	means = data.mean(0)
+
+	# subtracts means from each row
+	for row in data:
+		for i in range(len(means)):
+			row[i] -= means[i]
+
+	return data
+
