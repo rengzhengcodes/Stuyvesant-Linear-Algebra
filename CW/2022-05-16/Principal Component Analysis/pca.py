@@ -53,3 +53,20 @@ def pca(data:np.array):
 	return results
 
 print(pca(data))
+
+"""
+Graphing the data
+"""
+import matplotlib.pyplot as plt
+
+plot_data = demean(data)
+plot_data = plot_data.transpose()
+print(plot_data)
+plt.plot(plot_data[0], plot_data[1], 'ro')
+eigs = pca(data)
+principle_component = eigs[max([abs(x) for x in eigs.keys()])]
+pc = principle_component
+x = np.linspace(-50, 50, 100)
+y = (pc[0]/pc[1]) * x + 0
+plt.plot(x, y, linewidth = 2.0)
+plt.show()
