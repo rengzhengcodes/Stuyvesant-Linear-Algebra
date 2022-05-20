@@ -11,8 +11,8 @@ for i in range(len(test_X)):
 	# gets testing sample
 	analyte = test_X[i]
 	# takes data and shifts it into a unit vector
-	sum = analyte.sum()
-	analyte = analyte / sum
+	norm = np.linalg.norm(analyte)
+	analyte = analyte / norm
 	analyte = analyte.reshape((1 , 28*28))
 	# gets a result from projection onto subspace
 	result = analyte@r
