@@ -8,5 +8,7 @@ def collapse_3D_2D(m3D:np.ndarray) -> np.ndarray:
 		raise ValueError("Expected 3D array, got " + m3D.ndim)
 
 def regress2D_matrix(matrix:np.ndarray, result_vector:np.ndarray) -> np.ndarray:
-	q, r = np.linalg.qr(matrix) # decomposes to independent portions
-	return np.linalg.inv(q.transpose()@q)@q.transpose()@result_vector
+	# q, r = np.linalg.qr(matrix) # decomposes to independent portions
+	temp = matrix.transpose()@matrix
+	np.savetxt("temp.csv", temp, delimiter=",")
+	return np.linalg.inv(temp)@matrix.transpose()@result_vector
