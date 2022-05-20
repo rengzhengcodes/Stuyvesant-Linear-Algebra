@@ -23,6 +23,7 @@ for i in range(len(test_X)):
 
 	if result >= 10:
 		print(i)
+		incorrect += 1
 	elif result == test_Y[i]:
 		correct += 1
 	else:
