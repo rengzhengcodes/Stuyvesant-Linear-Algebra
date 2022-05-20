@@ -7,9 +7,9 @@ r = np.genfromtxt("res.csv", delimiter=',')
 correct = 0
 incorrect = 0
 
-for i in range(len(test_X)):
+for i in range(len(train_X)):
 	# gets testing sample
-	analyte = test_X[i]
+	analyte = train_X[i]
 	# takes data and shifts it into a unit vector
 	norm = np.linalg.norm(analyte)
 	analyte = analyte / norm
@@ -24,11 +24,11 @@ for i in range(len(test_X)):
 	if result >= 10:
 		print(i)
 		incorrect += 1
-		print(result, test_Y[i])
-	elif result == test_Y[i]:
+		print(result, train_Y[i])
+	elif result == train_Y[i]:
 		correct += 1
 	else:
 		incorrect += 1
-		print(result, test_Y[i])
+		print(result, train_Y[i])
 
 print(correct, incorrect)
