@@ -1,4 +1,5 @@
 import lin_reg
+import numpy as np
 from keras.datasets import mnist
 (train_X, train_Y), (test_X, test_Y) = mnist.load_data()
 
