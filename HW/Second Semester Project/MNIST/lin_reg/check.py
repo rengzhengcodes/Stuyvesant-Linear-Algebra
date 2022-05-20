@@ -21,7 +21,9 @@ for i in range(len(test_X)):
 	result = round(result)
 	result = abs(result)
 
-	if result == test_Y[i]:
+	if result >= 10:
+		print(i)
+	elif result == test_Y[i]:
 		correct += 1
 	else:
 		incorrect += 1
