@@ -22,9 +22,10 @@ for i in range(len(train_X)):
 	result = abs(result)
 
 	if result >= 10:
-		print(i)
+		# print(i)
+		print("BAD!!!!")
 		incorrect += 1
-		print(result, train_Y[i])
+		# print(result, train_Y[i])
 	elif result == train_Y[i]:
 		correct += 1
 	else:
