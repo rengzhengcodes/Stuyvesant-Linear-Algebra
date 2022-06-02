@@ -9,10 +9,13 @@ for item in nums:
 	matrices[int(item)] = np.zeros((28, 28), dtype=float)
 
 for i in range(len(train_Y)):
-	matrices[train_Y[i]] += train_X[i] / 255
+	matrices[train_Y[i]] += train_X[i]
 
 for key, value in matrices.items():
 	matrices[key] = value / train_Y.tolist().count(key)
+
+for key, value in matrices.items():
+	matrices[key] = value / np.linalg.norm(value)
 
 for key, value in matrices.items():
 	matrices[key] = value.tolist()
