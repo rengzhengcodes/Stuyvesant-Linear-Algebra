@@ -26,6 +26,7 @@ for i in range(len(train_Y)):
 		matrices[best_val] += train_X[i]
 	else:
 		# removes errors from others
+		matrices[train_Y[i]] += train_X[i]
 		nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
 		nums.remove(train_Y[i])
 
