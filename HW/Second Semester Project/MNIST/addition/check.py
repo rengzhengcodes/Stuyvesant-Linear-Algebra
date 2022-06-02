@@ -37,7 +37,7 @@ for i in range(len(test_Y)):
 			max_score = results[key]
 			best_val = key
 
-	if best_val == test_Y[i]:
+	if int(best_val) == test_Y[i]:
 		correct += 1
 	else:
 		print(i)
