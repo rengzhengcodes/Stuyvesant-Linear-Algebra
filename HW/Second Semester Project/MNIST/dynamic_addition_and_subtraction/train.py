@@ -12,7 +12,7 @@ for key, value in temp.items():
 
 del temp
 print(matrices)
-for i in range(5):
+for i in range(25):
 	for i in range(len(train_Y)):
 		max_score = 0
 		best_val = 0
