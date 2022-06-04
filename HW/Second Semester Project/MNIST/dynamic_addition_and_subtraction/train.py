@@ -12,7 +12,7 @@ for key, value in temp.items():
 
 del temp
 print(matrices)
-for i in range(7):
+for i in range(10):
 	for i in range(len(train_Y)):
 		max_score = 0
 		best_val = 0
@@ -28,10 +28,10 @@ for i in range(7):
 
 		if best_val == train_Y[i]:
 			# incentivizes keeping this argument
-			matrices[best_val] += train_X[i]
+			matrices[best_val] += train_X[i] / np.linalg.norm(train_X[i])
 		else:
 			# removes errors from that guess
-			matrices[best_val] -= train_X[i]
+			matrices[best_val] -= train_X[i] / np.linalg.norm(train_X[i])
 
 for key, value in matrices.items():
 	matrices[key] = value / np.linalg.norm(value)
