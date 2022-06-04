@@ -33,6 +33,8 @@ for i in range(10):
 			# removes errors from that guess
 			matrices[best_val] -= train_X[i] / np.linalg.norm(train_X[i])
 
+			matrices[train_Y[i]] += train_X[i] / np.linalg.norm(train_X[i])
+
 for key, value in matrices.items():
 	matrices[key] = value / np.linalg.norm(value)
 
